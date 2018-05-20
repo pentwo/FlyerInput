@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Google Sheet Read/Write Test</title>
+  <link rel="stylesheet" href="css/bulma.min.css">
+</head>
+
+<body>
+  <div class="section">
+    <H1 class="title has-text-centered">Google Sheet R/W Tester</H1>
+  </div>
+
+
+
+  <div class="section notification">
+    <form class="form" id="form1">
+      <div class="field">
+        <label class="label">Date</label>
+        <div class="control">
+          <input class="input" type="date" name="date" id="date">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="section">
+    <form class="form" autocomplete="off" id="form1">
+      <div class="field">
+        <div class="field">
+          <label class="label">AREA</label>
+          <div class="control autocomplete">
+            <input id="suburbs" type="text" name="perthSuburbs" placeholder="Suburbs">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">SUB</label>
+          <div class="control">
+            <select class="input" type="text" name="sub" id="sub">
+              <option value="map1">MAP 1</option>
+              <option value="map2">MAP 2</option>
+              <option value="map3">MAP 3</option>
+              <option value="map4">MAP 4</option>
+              <option value="map5">MAP 5</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="field">
+          <label class="label">TYPE</label>
+          <!-- <div class="control">
+        <input class="input" type="text" id="type">
+      </div> -->
+          <div class="control">
+            <input type="radio" name="type" value="S">S
+            <br>
+            <input type="radio" name="type" value="WR">WR
+            <br>
+            <input type="radio" name="type" value="LAD+S">LAD+S
+            <br>
+            <input type="radio" name="type" value="LAD+WR">LAD+WR
+            <br>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">QTY</label>
+          <div class="control">
+            <input class="input" type="text" name="qty" id="qty">
+          </div>
+        </div>
+
+    </form>
+    <div class="control">
+      <button class="button is-link" id="submitBtn">Submit</button>
+      <!-- <button class="button is-link" id="submitBtn">Submit</button> -->
+    </div>
+    </div>
+    <!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script> -->
+    <script>
+      document.getElementById('date').valueAsDate = new Date()
+    </script>
+
+    <!-- <script src="app.js"></script> -->
+    <!-- <script src="apiCall.js"></script> -->
+    <script type="module" src="form.js"></script>
+</body>
+<footer class="footer ">
+  <div class="field is-group">
+    <div class="has-text-centered">
+      <button class="button" id="signin-button" onclick="handleSignInClick()">Sign in</button>
+      <button class="button" id="signout-button" onclick="handleSignOutClick()">Sign out</button>
+    </div>
+  </div>
+
+</footer>
+
+</html>
