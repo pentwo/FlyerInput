@@ -6,12 +6,12 @@ class EditForm extends React.Component {
 
     this.myFormRef = React.createRef();
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {}
   componentDidUpdate() {}
 
-  handleClick(e) {
+  handleSubmit(e) {
     e.preventDefault();
     const count = {
       DATE: this.props.date,
@@ -29,7 +29,7 @@ class EditForm extends React.Component {
       <form
         className="form"
         id="form2"
-        onSubmit={this.handleClick}
+        onSubmit={this.handleSubmit}
         ref={this.myFormRef}
       >
         <div className="field">

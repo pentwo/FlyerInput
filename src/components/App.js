@@ -7,9 +7,25 @@ class App extends React.Component {
     counts: {}
   };
 
+  componentDidMount() {
+    const localStorageRef = localStorage.getItem("pentwo");
+    if (localStorageRef) {
+      this.setState({ counts: JSON.parse(localStorageRef) });
+    }
+  }
+  componentDidUpdate() {
+    localStorage.setItem("pentwo", JSON.stringify(this.state.counts));
+  }
+
   addRecord = count => {
     const counts = { ...this.state.counts };
     counts[`${Object.keys(counts).length}`] = count;
+    this.setState({ counts });
+  };
+
+  delRecord = key => {
+    const counts = { ...this.state.counts };
+    delete counts[key];
     this.setState({ counts });
   };
 
@@ -18,7 +34,10 @@ class App extends React.Component {
       <div className="section">
         <h1 className="title">Flyers Recording Syetem</h1>
         <FlyersForm addRecord={this.addRecord} />
-        <FlyerCountTable counts={this.state.counts} />
+        <FlyerCountTable
+          counts={this.state.counts}
+          delRecord={this.delRecord}
+        />
       </div>
     );
   }
