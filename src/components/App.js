@@ -8,13 +8,16 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    const localStorageRef = localStorage.getItem("pentwo");
+    const localStorageRef = localStorage.getItem(this.props.match.params.user);
     if (localStorageRef) {
       this.setState({ counts: JSON.parse(localStorageRef) });
     }
   }
   componentDidUpdate() {
-    localStorage.setItem("pentwo", JSON.stringify(this.state.counts));
+    localStorage.setItem(
+      this.props.match.params.user,
+      JSON.stringify(this.state.counts)
+    );
   }
 
   addRecord = count => {

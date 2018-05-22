@@ -57,7 +57,7 @@ class EditForm extends React.Component {
         </div>
         <div className="field">
           <label className="label">TYPES</label>
-          <div className="control">
+          <div className="control is-grouped">
             <input type="radio" name="types" value="SINGLE" defaultChecked />SINGLE
             <input type="radio" name="types" value="WARP" />WARP
             <input type="radio" name="types" value="LAD+SINGLE" />LAD+SINGLE
@@ -67,7 +67,7 @@ class EditForm extends React.Component {
         <div className="field">
           <label className="label">QTY</label>
           <div className="control">
-            <input className="input" type="text" name="qty" id="qty" />
+            <input className="input" type="number" name="qty" id="qty" />
           </div>
         </div>
         <div className="field">
